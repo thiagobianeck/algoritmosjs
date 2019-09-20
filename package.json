@@ -1,0 +1,35 @@
+{
+  "name": "algoritmosjs",
+  "version": "1.0.0",
+  "description": "Estudos em Algoritmos JavaScript",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "babel-node ./src/index.js",
+    "test": "jest",
+    "secure-mode": "jest --watch --verbose=true",
+    "dev": "nodemon index.js --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagobianeck/algoritmosjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagobianeck/algoritmosjs/issues"
+  },
+  "homepage": "https://github.com/thiagobianeck/algoritmosjs#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "babel-jest": "^24.9.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/plugin-proposal-class-properties": "^7.5.5"
+  }
+}
