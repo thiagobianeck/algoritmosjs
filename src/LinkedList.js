@@ -16,7 +16,7 @@ export default class LinkedList {
   }
 
   /**
-   *
+   * @description adiciona um elemento no inicio da lista ligada
    * @param value
    * @returns {LinkedList}
    */
