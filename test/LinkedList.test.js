@@ -178,6 +178,10 @@ describe('Ao excluir um item usando delete..', () => {
       linkedList.append('primeiro');
     });
 
+    test('Ao excluir um objeto inexistente deve retornar null', () => {
+      expect(linkedList.delete('inexistente')).toBeNull();
+    });
+
     test('Ao excluir deve retornar o head como null', () => {
       linkedList.delete('primeiro');
       expect(linkedList.head).toBeNull();
