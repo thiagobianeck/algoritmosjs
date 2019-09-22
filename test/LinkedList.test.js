@@ -32,7 +32,7 @@ describe('Ao adicionar ao final da lista usando prepend..', () => {
     });
   });
 
-  describe('Adicionando dois elementos..', () => {
+  describe('Adicionando dois elementos diferentes..', () => {
 
     beforeEach(() => {
       linkedList.prepend('primeiro');
@@ -52,7 +52,7 @@ describe('Ao adicionar ao final da lista usando prepend..', () => {
     });
   });
 
-  describe('Adicionando três elementos..', () => {
+  describe('Adicionando três elementos diferentes..', () => {
 
     beforeEach(() => {
       linkedList.prepend('primeiro');
@@ -109,7 +109,7 @@ describe('Ao adicionar no início da lista usando append..', () => {
     });
   });
 
-  describe('Adicionando dois elementos..', () => {
+  describe('Adicionando dois elementos diferentes..', () => {
 
     beforeEach(() => {
       linkedList.append('primeiro');
@@ -135,7 +135,7 @@ describe('Ao adicionar no início da lista usando append..', () => {
 
   });
 
-  describe('Adicionando três elementos..', () => {
+  describe('Adicionando três elementos diferentes..', () => {
 
     beforeEach(() => {
       linkedList.append('primeiro');
@@ -193,7 +193,7 @@ describe('Ao excluir um item usando delete..', () => {
     });
   });
 
-  describe('Em um lista de dois elementos..', () => {
+  describe('Em um lista de dois elementos diferentes..', () => {
 
     beforeEach(() => {
       linkedList.append('primeiro');
@@ -210,7 +210,20 @@ describe('Ao excluir um item usando delete..', () => {
       expect(linkedList.tail.value).toBe('primeiro');
     });
 
+  });
 
+  describe('Em um lista de dois elementos iguais..', () => {
+
+    beforeEach(() => {
+      linkedList.append('primeiro');
+      linkedList.append('primeiro');
+    });
+
+    test('Ao excluir deve retornar head e tail como null', () => {
+      linkedList.delete('primeiro');
+      expect(linkedList.tail).toBeNull();
+      expect(linkedList.head).toBeNull();
+    });
   });
 
   describe('Em um lista de três elementos..', () => {

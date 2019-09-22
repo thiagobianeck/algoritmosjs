@@ -2,7 +2,7 @@ import LinkedListNode from './LinkedList/LinkedListNode';
 import Comparator from './Utils/Comparator';
 
 /**
- *
+ * Lista Ligada
  */
 export default class LinkedList {
   /**
@@ -16,14 +16,20 @@ export default class LinkedList {
   }
 
   /**
-   * @description adiciona um elemento no inicio da lista ligada
+   * Adiciona um elemento no inicio (head) da lista ligada
    * @param value
    * @returns {LinkedList}
    */
   prepend(value) {
+    /*
+    Adiciona um novo item e seta
+    como referencia de seu next o head atual
+    */
     const newNode = new LinkedListNode(value, this.head);
+    /* Seta o novo nó como head */
     this.head = newNode;
 
+    /* Se não tem o tail então o novo nó será o novo tail */
     if(!this.tail) {
       this.tail = newNode;
     }
@@ -36,15 +42,20 @@ export default class LinkedList {
    * @returns {LinkedList}
    */
   append(value) {
+    /* cria um novo objeto com o next null */
     const newNode = new LinkedListNode(value);
 
+    /* Se não tem um head então o novo nó será o head e o tail */
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
       return this;
     }
 
+    /* Se não cair na condição acima, significa que tem um head
+    * logo, seta o novo nó como referência de próximo para o tail atual*/
     this.tail.next = newNode;
+    /* Seta o novo nó como novo tail */
     this.tail = newNode;
     return this;
   }
@@ -55,14 +66,20 @@ export default class LinkedList {
    * @returns {null}
    */
   delete(value) {
+    /* Se não tem um head, não tem elementos
+    * então retorna null
+    */
     if (!this.head) {
       return null;
     }
-
+    /* inicializa a variavel deletedNode para usar no while */
     let deletedNode = null;
-
+    /* Enquanto a lista tiver um head e o valor passado no parâmetro
+    * for igual ao valor do head...*/
     while(this.head && this.compare.equal(this.head.value, value)) {
+      /* deletedNode será o head atual*/
       deletedNode = this.head;
+      /* seta o head como o próximo item*/
       this.head = this.head.next;
     }
 
